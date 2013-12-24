@@ -7,12 +7,14 @@ This linter plugin for [SublimeLinter](https://github.com/SublimeLinter/SublimeL
 SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here](https://github.com/SublimeLinter/SublimeLinter.github.io/wiki/Installation).
 
 ### Linter installation
-Before using this plugin, you must ensure that `cppcheck` is installed on your system. To install `cppcheck`, do the following:
+Before using this plugin, you must ensure that `cppcheck` is installed on your system. To install `cppcheck`, do one of the following:
 
-1. Install `cppcheck` by typing the following in a terminal:
+* Install `cppcheck` from your favorite package manager by typing the following in a terminal:
    ```
    <package manager> install cppcheck
    ```
+
+* For Windows, you can download a copy from the [official site of cppcheck](http://cppcheck.sourceforge.net/).
 
 Once cppcheck is installed, you can proceed to install the SublimeLinter-cppcheck plugin if it is not yet installed.
 
@@ -30,10 +32,31 @@ For general information on how SublimeLinter works with settings, please see [Se
 
 In addition to the standard SublimeLinter settings, SublimeLinter-cppcheck provides its own settings. Those marked as “Inline Setting” or “Inline Override” may also be [used inline](https://github.com/SublimeLinter/SublimeLinter.github.io/wiki/Settings#inline-settings).
 
-|Setting|Description|Inline Setting|Inline Override|Example|
-|:------|:----------|:------------:|:-------------:|:-------------:|
-|std|Set standard.| | |`["c89", "c99"]`|
-|enable|Enable additional checks. Default is `style`.| | |`style,unusedFunction`|
+|Setting|Description|Inline Setting|Inline Override|
+|:------|:----------|:------------:|:-------------:|
+|std|Set the language standard used.|&#10003;| |
+|enable|A comma-delimited list of checks to enable. Defaults to `style`.|&#10003;|&#10003;|
+
+### Examples
+
+For inline settings, you can put on the first two lines of the file:
+``// [SublimeLinter cppcheck-std: c++03 cppcheck-enable: all]``
+
+In your project or user settings, you can set:
+```json
+// ...
+"linters": {
+    "cppcheck": {
+        // ...
+        "enable": "style,unusedFunction",
+        "std": ["c89", "c99"]
+    },
+}
+```
+
+For ``enable``, you can use a single string (ex: ``"style,unusedFunction"``), or an array of strings if not inline (ex: ``["style", "unusedFunction"]``).
+
+For ``std``, you can use a single string for a single value, but you have to use an array of strings for multiple values (ex. ``["c89", "c99"]``), which means you can't use multiple values in inline settings.
 
 ## Contributing
 If you would like to contribute enhancements or fixes, please do the following:
