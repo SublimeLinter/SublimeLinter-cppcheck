@@ -26,7 +26,7 @@ class Cppcheck(Linter):
         '--std=,+': [],  # example ['c99', 'c89']
         '--enable=,': 'style',
     }
-    inline_settings = ('std', 'enable')
+    inline_settings = 'std'
     inline_overrides = 'enable'
 
     comment_re = r'\s*/[/*]'

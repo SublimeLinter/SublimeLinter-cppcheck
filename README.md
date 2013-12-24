@@ -35,7 +35,7 @@ In addition to the standard SublimeLinter settings, SublimeLinter-cppcheck provi
 |Setting|Description|Inline Setting|Inline Override|
 |:------|:----------|:------------:|:-------------:|
 |std|Set the language standard used.|&#10003;| |
-|enable|A comma-delimited list of checks to enable. Defaults to `style`.|&#10003;|&#10003;|
+|enable|A comma-delimited list of checks to enable. Defaults to `style`.| |&#10003;|
 
 ### Examples
 
