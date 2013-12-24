@@ -40,7 +40,9 @@ In addition to the standard SublimeLinter settings, SublimeLinter-cppcheck provi
 ### Examples
 
 For inline settings, you can put on the first two lines of the file:
-``// [SublimeLinter cppcheck-std: c++03 cppcheck-enable: all]``
+```c++
+// [SublimeLinter cppcheck-std: c++03 cppcheck-enable: all]
+```
 
 In your project or user settings, you can set:
 ```json
