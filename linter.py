@@ -17,7 +17,7 @@ class Cppcheck(Linter):
 
     """Provides an interface to cppcheck."""
 
-    syntax = ('c++', 'c')  # Able to handle C and C++ syntax
+    syntax = ('c++', 'c', 'c improved')  # Able to handle C and C++ syntax
     cmd = ('cppcheck', '--template=gcc', '--inline-suppr', '--quiet', '*', '@')
     regex = (
         r'^(?P<file>.+):(?P<line>\d+):\s+'
