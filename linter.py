@@ -14,7 +14,6 @@ from SublimeLinter.lint import Linter, util
 
 
 class Cppcheck(Linter):
-
     """Provides an interface to cppcheck."""
 
     syntax = ('c++', 'c', 'c improved')  # Able to handle C and C++ syntax
