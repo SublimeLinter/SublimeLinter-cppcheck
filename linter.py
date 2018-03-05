@@ -45,6 +45,6 @@ class Cppcheck(Linter):
 
         if match:
             if match.group('file') != self.filename:
-                match = None
+                return None
 
         return super().split_match(match)
