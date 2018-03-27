@@ -1,6 +1,0 @@
-SublimeLinter-cppcheck
--------------------------------
-Inline settings will be no longer be supported in SublimeLinter 4.
-Please use cppcheck configuration files etc. instead.
-
-https://github.com/SublimeLinter/SublimeLinter3/blob/next/messages/4.0.0-rc.1.txt
