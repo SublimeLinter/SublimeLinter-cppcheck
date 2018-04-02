@@ -3,7 +3,8 @@ SublimeLinter-cppcheck
 
 [![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-cppcheck.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-cppcheck)
 
-This linter plugin for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter) provides an interface to [cppcheck](http://cppcheck.sourceforge.net/). It will be used with files that have the “C++” or “C” syntax.
+This linter plugin for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter) provides an interface to [cppcheck](http://cppcheck.sourceforge.net/).
+It will be used with files that have the "C++" or "C" syntax.
 
 ## Installation
 
@@ -11,7 +12,8 @@ SublimeLinter must be installed in order to use this plugin.
 
 Please use [Package Control](https://packagecontrol.io) to install the linter plugin.
 
-Before using this plugin, you must ensure that `cppcheck` is installed on your system. To install `cppcheck`, do one of the following:
+Before using this plugin, ensure that `cppcheck` is installed on your system.
+To install `cppcheck`, do one of the following:
 
 * Install `cppcheck` from your favorite package manager:
    ```
@@ -20,7 +22,8 @@ Before using this plugin, you must ensure that `cppcheck` is installed on your s
 
 * For Windows, you can download a copy from the [official site of cppcheck](http://cppcheck.sourceforge.net/).
 
-Once `cppcheck` is installed, you must ensure it is in your system PATH so that SublimeLinter can find it. The docs cover [troubleshooting PATH configuration](http://sublimelinter.com/en/latest/troubleshooting.html#finding-a-linter-executable).
+Once `cppcheck` is installed, ensure it is in your system PATH so that SublimeLinter can find it.
+The docs cover [troubleshooting PATH configuration](http://sublimelinter.com/en/latest/troubleshooting.html#finding-a-linter-executable).
 
 
 ## Settings
