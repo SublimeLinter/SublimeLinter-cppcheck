@@ -9,6 +9,7 @@ class Cppcheck(Linter):
         r'(?P<message>.+)'
     )
     error_stream = util.STREAM_BOTH  # linting errors are on stderr, exceptions like "file not found" on stdout
+    on_stderr = None  # handle stderr via split_match
     tempfile_suffix = '-'
     defaults = {
         'selector': 'source.c, source.c++',
