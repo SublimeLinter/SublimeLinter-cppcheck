@@ -2,7 +2,7 @@ from SublimeLinter.lint import Linter, util
 
 
 class Cppcheck(Linter):
-    cmd = ('cppcheck', '--template=gcc', '--inline-suppr', '--quiet', '${args}', '${file}')
+    cmd = ('cppcheck', '--template={file}:{line}: {severity}: {message}', '--inline-suppr', '--quiet', '${args}', '${file}')
     regex = (
         r'^(?P<file>(:\\|[^:])+):(?P<line>\d+):((?P<col>\d+):)?\s+'
         r'((?P<error>error)|(?P<warning>warning|style|performance|portability|information)):\s+'
