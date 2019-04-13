@@ -11,7 +11,7 @@ class Cppcheck(Linter):
         '${file}'
     )
     regex = (
-        r'^(?P<file>(:\\|[^:])+):(?P<line>\d+):((?P<col>\d+):)'
+        r'^(?P<filename>(:\\|[^:])+):(?P<line>\d+):((?P<col>\d+):)'
         r'((?P<error>error)|(?P<warning>warning|style|performance|portability|information)):'
         r'(?P<code>\w+):(?P<message>.+)'
     )
@@ -23,18 +23,3 @@ class Cppcheck(Linter):
         '--std=,+': [],  # example ['c99', 'c89']
         '--enable=,': 'style',
     }
-
-    def split_match(self, match):
-        """
-        Return the components of the match.
-
-        We override this because included header files can cause linter errors,
-        and we only want errors from the linted file.
-
-        """
-
-        if match:
-            if match.group('file') != self.filename:
-                return None
-
-        return super().split_match(match)
