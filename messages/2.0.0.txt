@@ -1,0 +1,16 @@
+SublimeLinter-cppcheck 2.0.0
+----------------------------
+
+'c' and 'c++' files now have different settings sections, and you may
+have to adjust your settings.
+
+{
+    "linters": {
+        "cppcheck": {    // <- for c files
+
+        },
+        "cppcheck++": {  // <-  for c++ files
+
+        }
+    }
+}

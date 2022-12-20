@@ -28,6 +28,24 @@ The docs cover [troubleshooting PATH configuration](http://sublimelinter.com/en/
 
 ## Settings
 
+We have two settings sections. 'cppcheck' for c files, and 'cppcheck++' to configure the linter for c++ files. E.g.
+
+```
+{
+    "linters":
+    {
+        "cppcheck": {
+            ...
+        },
+        "cppcheck++": {
+            ...
+        }
+    }
+},
+```
+
+`--language=` is set automatically to `c` or `c++`.
+
 - SublimeLinter settings: http://sublimelinter.com/en/latest/settings.html
 - Linter settings: http://sublimelinter.com/en/latest/linter_settings.html
 
