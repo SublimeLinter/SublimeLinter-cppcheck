@@ -16,7 +16,7 @@ REGEX = (
 )
 
 
-class CppcheckC(Linter):
+class Cppcheck(Linter):
     cmd = CMD
     regex = REGEX
     error_stream = util.STREAM_BOTH  # linting errors are on stderr, exceptions like "file not found" on stdout
@@ -31,13 +31,14 @@ class CppcheckC(Linter):
     }
 
 
-class CppcheckCpp(Linter):
+class CppcheckPlus(Linter):
     cmd = CMD
     regex = REGEX
     error_stream = util.STREAM_BOTH  # linting errors are on stderr, exceptions like "file not found" on stdout
     on_stderr = None  # handle stderr via split_match
     tempfile_suffix = "-"
 
+    name = 'cppcheck++'
     defaults = {
         "selector": "source.c++",
         "--language=": "c++",
