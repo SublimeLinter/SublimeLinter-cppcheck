@@ -16,7 +16,25 @@ REGEX = (
 )
 
 
-class Cppcheck(Linter):
+def byte_offset_to_index(text, offset):
+    """Return the index in `text` of the character at UTF-8 byte `offset`."""
+    return len(text.encode('utf-8')[:offset].decode('utf-8', 'ignore'))
+
+
+class CppcheckBase(Linter):
+    __abstract__ = True
+
+    def reposition_match(self, line, col, m, vv):
+        if col is not None:
+            # cppcheck reports the column as a byte offset into the UTF-8 line,
+            # so every non-ASCII character before the error shifts it. Sublime
+            # counts characters.
+            col = byte_offset_to_index(vv.select_line(line), col)
+
+        return super().reposition_match(line, col, m, vv)
+
+
+class Cppcheck(CppcheckBase):
     cmd = CMD
     regex = REGEX
     error_stream = util.STREAM_BOTH  # linting errors are on stderr, exceptions like "file not found" on stdout
@@ -31,7 +49,7 @@ class Cppcheck(Linter):
     }
 
 
-class CppcheckPlus(Linter):
+class CppcheckPlus(CppcheckBase):
     cmd = CMD
     regex = REGEX
     error_stream = util.STREAM_BOTH  # linting errors are on stderr, exceptions like "file not found" on stdout
