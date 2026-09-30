@@ -17,6 +17,7 @@ REGEX = (
 
 
 class Cppcheck(Linter):
+    column_unit = 'utf8'
     cmd = CMD
     regex = REGEX
     error_stream = util.STREAM_BOTH  # linting errors are on stderr, exceptions like "file not found" on stdout
@@ -32,6 +33,7 @@ class Cppcheck(Linter):
 
 
 class CppcheckPlus(Linter):
+    column_unit = 'utf8'
     cmd = CMD
     regex = REGEX
     error_stream = util.STREAM_BOTH  # linting errors are on stderr, exceptions like "file not found" on stdout
